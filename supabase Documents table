@@ -1,0 +1,10 @@
+create extension if not exists vector;
+
+drop table if exists documents;
+
+create table documents (
+  id uuid primary key default uuid_generate_v4(),
+  content text,
+  source text,
+  embedding vector(768) 
+);
